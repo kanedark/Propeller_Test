@@ -5,10 +5,8 @@
 <title>Propeller Build Test</title>
 <!-- Bootstrap core CSS -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
-<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 <!-- Custom styles for this template -->
-<link href="justified-nav.css" rel="stylesheet">
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet">
 <link href="css/carousel.css" rel="stylesheet">
 <link href="css/sticky-footer.css" rel="stylesheet" />
     
@@ -19,7 +17,44 @@
 	url("image/Background03.jpg")  no-repeat bottom;
 	background-color:#000000;
 	}
+	
+	#hover-cap-4col .thumbnail {
+		position:relative;
+		overflow:hidden;	
+	}
+	.caption {
+		display: none;
+		position: absolute;
+		top: 0;
+		left: 0;
+		background: rgba(0,0,0,0.4);
+		width: 100%;
+		height: 100%;
+		color:#fff !important;
+	}
+	.caption p {
+		padding:6px;
+	}
+
 	</style>
+
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+	$("[rel='tooltip']").tooltip();	
+
+	$('#hover-cap-4col .thumbnail').hover(
+		function(){
+			$(this).find('.caption').fadeIn(250);
+		},
+		function(){
+			$(this).find('.caption').fadeOut(250);
+		}
+	);	
+});		
+</script>
     
 </head>
 <body>
@@ -66,21 +101,51 @@
     <p class="text-center text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
     </div>
   </div>
-  <div class="col-md-3 col-sm-3 col-xs-6 centerBlock">
-  <img class="img-responsive" src="image/bookatable.jpg" alt="Book A Table" />
-  </div>
+  <!----------------- START 4 BUTTONS --------------------------->
+  <div class="thumbnails" id="hover-cap-4col">
+            <div class="col-lg-3 col-md-3 col-sm-3">
+              <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="text-center">BOOK A TABEL</h4>
+                    <img class="img-responsive centerBlock" src="image/DoubleArror.png" />
+                    <p class="text-center"><a href="#" rel="tooltip" title="Book A Tabel"><span style="color:#FFFFFF;">click here</span></a></p> 
+                </div>
+                <img class="img-responsive" src="image/bookatable.jpg" alt="Book A Table" />
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3">
+              <div class="thumbnail">
+                <div class="caption">
+                   <h4 class="text-center">MENUS</h4>
+                   <img class="img-responsive centerBlock" src="image/DoubleArror.png" />
+                    <p class="text-center"><a href="#" rel="tooltip" title="Visit Menus"><span style="color:#FFFFFF;">click here</span></a></p> 
+                </div>
+                 <img class="img-responsive" src="image/menus.jpg" alt="Menus" />
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3">
+              <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="text-center">CHRISTMAS</h4>
+                    <img class="img-responsive centerBlock" src="image/DoubleArror.png" />
+                    <p class="text-center"><a href="#" rel="tooltip" title="Christmas Menus"><span style="color:#FFFFFF;">click here</span></a></p> 
+                </div>
+                <img class="img-responsive" src="image/christmas.jpg" alt="Christmas" />
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3">
+              <div class="thumbnail">
+                <div class="caption">
+                    <h4 class="text-center">CONTACT</h4>
+                    <img class="img-responsive centerBlock" src="image/DoubleArror.png" />
+                    <p class="text-center"><a href="#" rel="tooltip" title="Contact Us"><span style="color:#FFFFFF;">click here</span></a></p> 
+                </div>
+                <img class="img-responsive" src="image/contact.jpg" alt="Contact" />
+              </div>
+            </div>
+   </div>         
+  <!----------------- END 4 BUTTONS --------------------------->
   
-  <div class="col-md-3 col-sm-3 col-xs-6 centerBlock">
-  <img class="img-responsive" src="image/menus.jpg" alt="Menus" />
-  </div>
-  
-  <div class="col-md-3 col-sm-3 col-xs-6 centerBlock">
-  <img class="img-responsive" src="image/christmas.jpg" alt="Christmas" />
-  </div>
-  
-  <div class="col-md-3 col-sm-3 col-xs-6 centerBlock">
-  <img class="img-responsive" src="image/contact.jpg" alt="Contact" />
-  </div>
   <div class="col-md-12">
   <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -131,7 +196,5 @@ our exclusive offers!</p>
   </footer>
 </div>
 <!-- /container -->
-<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
 </body>
 </html>
